@@ -1,11 +1,12 @@
-import { Button } from '@/components/ui/button'
 import React from 'react'
+import { UserButton } from '@clerk/nextjs'
 
 const Home = () => {
   return (
-   <Button size="lg" variant="ghost">
-      Click Me
-   </Button>
+    <div className='flex flex-col gap-y-4'>
+      <h1>Dashboard</h1>
+      <UserButton afterSignOutUrl='/'/>
+    </div>
   )
 }
 
