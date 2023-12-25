@@ -27,8 +27,7 @@ const UserItem = ({ username, imageURl, isLive }: UserItemProps) => {
         "w-full h-12",
         collapsed
           ? "justify-center"
-          : "jus\
-    ",
+          : "justify-start",
         isActive && "bg-accent"
       )}
     >

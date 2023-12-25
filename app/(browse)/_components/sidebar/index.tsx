@@ -3,7 +3,7 @@ import Wrapper from "./wrapper";
 import Toggle, { ToggleSkeleton } from "./Toggle";
 import Recommended, { RecommendedSkeleton } from "./Recommended";
 
-import getRecommended from "@/lib/recommended-service";
+import {getRecommended} from "@/lib/recommended-service";
 
 const Sidebar = async() => {
   const recommended = await getRecommended()
