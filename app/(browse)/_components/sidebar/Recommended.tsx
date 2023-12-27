@@ -2,7 +2,7 @@
 
 import { User } from "@prisma/client";
 import { useSidebar } from "@/store/use-sidebar";
-import UserItem, { UserItemSkeleton } from "./user-item";
+import  {UserItem, UserItemSkeleton } from "./user-item";
 
 interface RecommendedProps {
   data: User[];
