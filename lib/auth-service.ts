@@ -23,3 +23,24 @@ return user
 export default getSelf
 
 
+export const getSelfByUsername = async (username : string) => {
+    const self = await currentUser()
+
+    if (!self || !self.username) {
+        throw new Error("Unauthorized")
+    }
+    const user = await db.user.findUnique({
+        where : {
+            username,
+        }
+    })
+    if(!user) {
+        throw new Error("Not found")
+    }
+
+    if(self.username !== user.username){
+        throw new Error("Unauthorized")
+    }
+    return user
+
+}
