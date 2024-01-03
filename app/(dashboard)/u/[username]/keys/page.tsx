@@ -22,7 +22,7 @@ const KeysPage = async () => {
       </div>
       <div className="space-y-4">
         <UrlCard value={stream.serverUrl}/>
-        <KeyCard value={stream.serverUrl}/>
+        <KeyCard value={stream.streamKey}/>
       </div>
    </div>
   )
