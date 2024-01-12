@@ -7,3 +7,5 @@ const CreaterLoadingPage = () => {
     </div>
   );
 };
+
+export default CreaterLoadingPage;
