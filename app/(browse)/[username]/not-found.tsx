@@ -11,7 +11,7 @@ const NotFoundPage = () => {
       </p>
       <Button variant="secondary" asChild>
         <Link href="/">
-          Go back home
+          Back TO home
         </Link>
       </Button>
     </div>
