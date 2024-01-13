@@ -1,6 +1,6 @@
 "use client"
 
-import { onblock, onUnblock } from '@/actions/block'
+import { onBlock, onUnblock } from '@/actions/block'
 import { onFollow, onUnfollow } from '@/actions/follow'
 import { Button } from '@/components/ui/button'
 import React, { useTransition } from 'react'
