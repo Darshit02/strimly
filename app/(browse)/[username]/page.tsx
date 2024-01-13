@@ -1,33 +1,33 @@
-import { StreamPlayer } from "@/components/stream-player";
-import { isBlockedByUser } from "@/lib/block-service";
-import { isFollowingUser } from "@/lib/follow-service";
-import getUserByUserName from "@/lib/user-service";
-import { notFound } from "next/navigation";
+import { currentUser } from "@clerk/nextjs";
 
-interface UserPageProps {
+import  getUserByUsername  from "@/lib/user-service";
+import { StreamPlayer } from "@/components/stream-player";
+
+interface CreatorPageProps {
   params: {
     username: string;
   };
-}
-
-const UserPage = async ({ params }: UserPageProps) => {
-  const user = await getUserByUserName(params.username)
-
-  if(!user || !user.stream){
-  notFound()
-}
-  const isFollowing = await isFollowingUser(user.id)
-  const isBlocked = await isBlockedByUser(user.id)
-if(isBlocked){
-  notFound()
-}
-  return (
-  <StreamPlayer
-  user={user}
-  stream={user.stream}
-  isFollowing={isFollowing}
-  />
-  )
 };
 
-export default UserPage;
+const CreatorPage = async ({
+  params,
+}: CreatorPageProps) => {
+  const externalUser = await currentUser();
+  const user = await getUserByUsername(params.username);
+
+  if (!user || user.externalUserId !== externalUser?.id || !user.stream) {
+    throw new Error("Unauthorized");
+  }
+
+  return ( 
+    <div className="h-full">
+      <StreamPlayer
+        user={user}
+        stream={user.stream}
+        isFollowing
+      />
+    </div>
+  );
+}
+ 
+export default CreatorPage;
