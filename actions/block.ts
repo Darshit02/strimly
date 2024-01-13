@@ -12,7 +12,7 @@ const roomService = new RoomServiceClient(
   process.env.LIVEKIT_API_SECRET!,
 );
 
-export const onBlock = async (id: string) => {
+export const onblock = async (id: string) => {
   const self = await getSelf();
 
   let blockedUser;
