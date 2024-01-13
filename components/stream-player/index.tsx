@@ -11,6 +11,7 @@ import { Chat, ChatSkeleton } from "@/components/stream-player/Chat";
 import { Video, VideoSkeleton } from "@/components/stream-player/Video";
 import { ChatToggle } from "./chat-toggle";
 import Header, { HeaderSkeleton } from "./header";
+import InfoCard from "./info-card";
 
 interface StreamPlayerProps {
   user: User & { stream: Stream | null };
@@ -69,7 +70,7 @@ export const StreamPlayer = ({
           hostIdentity={user.id}  
           viewerIdentity={identity}
           name={stream.name}
-          thumbnailUrl={stream.thumbnailUrl}
+          thumbnailUrl={stream.thumbnail}
           />
         </div>
         <div
