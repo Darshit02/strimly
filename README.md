@@ -38,7 +38,7 @@ Key Features:
 ### Cloning the repository
 
 ```shell
-git clone https://github.com/AntonioErdeljac/next14-twitch-clone.git
+git clone https://github.com/Darshit02/strimly.git
 ```
 
 ### Install packages
